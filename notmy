@@ -11976,6 +11976,47 @@ end)
 
 
 
+addcmd('weaponclone', {'wpcln'}, function(args, speaker)
+game:GetService("Players").LocalPlayer.Backpack.SpectralSword.Parent = game:GetService("Players").LocalPlayer.Character
+end)
+
+
+
+
+
+
+
+addcmd('NewEgg', {'NEgg'}, function(args, speaker)
+    -- Ensure the necessary objects exist
+    local player = game:GetService("Players").LocalPlayer
+    local backpack = player.Backpack
+    local character = player.Character
+    local workspace = game.Workspace
+    
+    -- Move EasterPeriastron to character
+    local easterPeriastron = backpack:FindFirstChild("EasterPeriastron")
+    if easterPeriastron then
+        easterPeriastron.Parent = character
+    end
+    
+    -- Try to get the script
+    local eggScript = workspace.Ahmad_9599:FindFirstChild("EasterPeriastron") and workspace.Ahmad_9599.EasterPeriastron:FindFirstChild("Script") and workspace.Ahmad_9599.EasterPeriastron.Script:FindFirstChild("EggScript")
+    
+    if eggScript then
+        -- Destroy the script
+        eggScript.DisableScript:Destroy()
+        notify("Делайте яйца")
+    else
+        notify("Плаке плаке")
+    end
+end)
+
+
+
+
+
+
+
 
 
 keycodeMap = {
