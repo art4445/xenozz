@@ -206,7 +206,7 @@ Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 250, 0, 20)
 Title.Font = Enum.Font.SourceSans
 Title.TextSize = 18
-Title.Text = "Infinite Yield FE v" .. currentVersion
+Title.Text = "Xenozz Hacks v" .. currentVersion
 
 do
 	local emoji = ({
@@ -4246,6 +4246,12 @@ function autoComplete(str,curText)
 end
 
 CMDs = {}
+CMDs[#CMDs + 1] = {NAME = '--Мои команды--', DESC = ''}
+CMDs[#CMDs + 1] = {NAME = 'dupe [num]', DESC = 'Надо держать в руках меч который надо дюпнуть, инвентарь должен быть полностью заполненным'}
+CMDs[#CMDs + 1] = {NAME = 'giveblocks', DESC = 'Выдает все блоки в игре открывая их'}
+CMDs[#CMDs + 1] = {NAME = 'weaponclone / wpcln', DESC = 'Одевает кольцо в руку'}
+CMDs[#CMDs + 1] = {NAME = 'NewEgg / NEgg', DESC = 'Нужно держать яичный периостан в руках'}
+CMDs[#CMDs + 1] = {NAME = '--Конец--', DESC = ''}
 CMDs[#CMDs + 1] = {NAME = 'discord / support / help', DESC = 'Invite to the Infinite Yield support server.'}
 CMDs[#CMDs + 1] = {NAME = 'console', DESC = 'Loads old Roblox console'}
 CMDs[#CMDs + 1] = {NAME = 'explorer / dex', DESC = 'Opens DEX by Moon'}
@@ -11973,6 +11979,30 @@ addcmd("giveblocks", {}, function(args, speaker)
 end)
 
 
+
+
+addcmd('dupe',{},function(args, speaker)
+	    local stool
+	    local LOOP_NUM = tonumber(args[1]) or 1
+	
+	    
+	    for i, v in pairs(speaker.Character:GetDescendants()) do
+	        if v:IsA('Tool') or v:IsA('HopperBin') then
+	            stool = v.Name:lower()
+	        end
+	    end
+	
+	    
+	    for i = 1, LOOP_NUM do
+	        for i, v in pairs(speaker:FindFirstChildOfClass("Backpack"):GetChildren()) do
+	            if v.Name:lower() == stool then
+	                v.Parent = speaker.Character
+	                wait()
+	            end
+	        end
+	        wait(0.5)
+	    end
+end)
 
 
 
