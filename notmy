@@ -1,3 +1,5 @@
+print("Hi xenozz")
+print("Origin Version - 5.9.3")
 if IY_LOADED and not _G.IY_DEBUG == true then
 	-- error("Infinite Yield is already running!",0)
 	return
@@ -14,7 +16,7 @@ if not game:IsLoaded() then
 	notLoaded:Destroy()
 end
 
-currentVersion = '5.9.3'
+currentVersion = '7'
 
 Players = game:GetService("Players")
 
@@ -4247,6 +4249,7 @@ end
 
 CMDs = {}
 CMDs[#CMDs + 1] = {NAME = '--Мои команды--', DESC = ''}
+CMDs[#CMDs + 1] = {NAME = 'Construction / Cons', DESC = 'Help you'}
 CMDs[#CMDs + 1] = {NAME = 'dupe [num]', DESC = 'Надо держать в руках меч который надо дюпнуть, инвентарь должен быть полностью заполненным'}
 CMDs[#CMDs + 1] = {NAME = 'giveblocks', DESC = 'Выдает все блоки в игре открывая их'}
 CMDs[#CMDs + 1] = {NAME = 'weaponclone / wpcln', DESC = 'Одевает кольцо в руку'}
@@ -12041,6 +12044,14 @@ addcmd('NewEgg', {'NEgg'}, function(args, speaker)
     end
 end)
 
+
+
+
+
+
+addcmd("Construction", {"Cons"}, function(args, speaker)
+    notify("1, 2... inf^0.1, 0.01... (speed)^namecmd nickname")
+end)
 
 
 
