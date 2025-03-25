@@ -1,4 +1,4 @@
-print("Hi xenozz")
+aprint("Hi xenozz")
 print("Origin Version - 5.9.3")
 if IY_LOADED and not _G.IY_DEBUG == true then
 	-- error("Infinite Yield is already running!",0)
